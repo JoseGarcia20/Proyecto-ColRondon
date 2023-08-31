@@ -16,12 +16,17 @@ public class seguridad {
 		return httpSecurity
 				.csrf(config -> config.disable())
 				.authorizeHttpRequests(auth -> {
-					auth.requestMatchers("/","/index","/quienesSomos","/contacto","/foroAcademico","/Css","/js","/img").permitAll();
+					auth.requestMatchers("/","/index","/quienesSomos","/contacto","/foroAcademico","/Css","/js","/img","/login","/loginDocentes","/loginEstudiantes","/loginAcudientes").permitAll();
 					auth.anyRequest().authenticated();
 				})
 		.sessionManagement(session -> {
 			session.sessionCreationPolicy(SessionCreationPolicy.ALWAYS);
 		})
+		.formLogin()
+		.loginPage("/login")
+                .failureUrl("/login")
+                .permitAll()
+                .and()
 		.httpBasic()
 		.and()
 		.build();
