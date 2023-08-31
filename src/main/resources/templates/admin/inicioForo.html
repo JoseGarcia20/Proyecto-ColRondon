@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORO ACADEMICO</title>
+
+  <script th:src="@{/js/navegacion.js}"></script>
+  <link rel="stylesheet" th:href="@{/css/estilos.css}">
+  <link rel="stylesheet" th:href="@{/css/estilosForo.css}">
+
+  <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+  <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+  <link th:href="@{https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap}" rel="stylesheet">
+
+  <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css}">
+  <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.css}">
+
+</head>
+
+<body>
+
+  <div class="principal">
+		<!--Menu Principal-->
+		<div>
+			<button onclick="AbrirMenu()" id="menu">
+				<i id="icono" class="fa fa-bars fa-2x" /></i>
+			</button>
+
+			<!--Menu Lateral: Se activa cuando se de click en el botón-->
+			<div id="menuLateral" class="menuLateral">
+				<ul id="menuDosLateral" class="menu">
+
+
+				</ul>
+			</div>
+		</div>
+
+		<!--Encabezado-->
+		<header class="encabezado">
+			<div>
+				<a><img th:src="@{/img/escudo.jpg}" alt=""></a>
+			</div>
+
+			<div class="titulo">
+				<h1>INST. COLRONDON</h1>
+			</div>
+		</header>
+    <br><br>
+
+    <!--Contenido Principal-->
+    <main class="tablaPrincipal">
+
+      <!--Estudiantes-->
+      <div class="grado">
+
+        <!--Titulo-->
+        <div class="tituloSec">
+          <h4 id="Docentes" style="font-size: 20px;">Foro Académico</h4>
+        </div>
+              
+        <!--Estudiantes-->
+        <div class="tabla">
+          <table>
+            <tr>
+              <td>
+                Información
+              </td>
+            </tr>
+      
+            <tr class="infoTabla" th:each="foroAcademico : ${foroAcademico}">
+              <td>
+                <strong><p style="font-size: 19px; color: #0D1B2A;">[[ ${foroAcademico.titulo} ]]</p></strong>
+                <p><strong>Descripción:</strong> [[ ${foroAcademico.descripcion} ]]</p>
+                <p><strong>Hora de Inicio:</strong>[[ ${foroAcademico.horaInicio} ]]</p>
+                <p><strong>Hora Fin:</strong>[[ ${foroAcademico.horaFin} ]]</p>
+                <strong>Nota: Despues de la hora mencionada, no se responderan inquietudes.</strong>
+                <br><br>
+                
+                <div style="display: flex;">
+				  <a th:href="@{/admin/adminForo/editar/{id}(id = ${foroAcademico.id})}" style="padding: 3px;"><img th:src="@{/img/lapiz.png}" height="25px"></a>
+              	  <a th:href="@{/admin/adminForo/eliminar/{id}(id = ${foroAcademico.id})}" style="padding: 3px;" onclick="return confirm('Estás seguro que quieres eliminar?');"><img th:src="@{/img/eliminar.png}" height="25px"></a>
+              	  <a th:href="@{/admin/adminForo/ver/{id}(id = ${foroAcademico.id})}" style="padding: 3px;" ><img th:src="@{/img/detalles.png}" height="25px"></a>
+				</div>
+
+              </td>
+            </tr>
+          </table>
+        </div>
+        
+        <div class="tituloSec" style="display: flex; flex-direction: row;">
+          <a id="button" th:href="@{/admin/adminForo/nuevo}">Iniciar Nuevo Foro</a>
+        </div>
+      </div>
+
+      
+    </main>
+    <br>
+  </div>
+
+  <!--Footer-->
+  <footer>
+
+    <div class="foo">
+      <p style="color: lightgray; font-size: 12px;">@2023 Colegio Juan Jose Rondon Derechos reservados</p>
+    </div>
+
+  </footer>
+</body>
+
+</html>

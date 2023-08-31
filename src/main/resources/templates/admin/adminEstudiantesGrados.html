@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coordinador - Grados</title>
+
+  <script th:src="@{/js/navegacion.js}"></script>
+  <link rel="stylesheet" th:href="@{/css/estilos.css}">
+
+  <link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+  <link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+  <link th:href="@{https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap}" rel="stylesheet">
+
+  <link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css}">
+  <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.css}">
+
+</head>
+
+<body>
+
+  <div class="principal">
+		<!--Menu Principal-->
+		<div>
+			<button onclick="AbrirMenu()" id="menu">
+				<i id="icono" class="fa fa-bars fa-2x" /></i>
+			</button>
+
+			<!--Menu Lateral: Se activa cuando se de click en el botón-->
+			<div id="menuLateral" class="menuLateral">
+				<ul id="menuDosLateral" class="menu">
+
+					<!--
+					<li class="menuItem menuItemPeque" >
+						<a th:href="@{/inicioDocentes/verDocente/{id} (id = ${docente.id})}">Mis Datos</a>
+					</li>
+					-->
+				</ul>
+			</div>
+		</div>
+
+		<!--Encabezado-->
+		<header class="encabezado">
+			<div>
+				<a><img th:src="@{/img/escudo.jpg}" alt=""></a>
+			</div>
+
+			<div class="titulo">
+				<h1>INST. COLRONDON</h1>
+			</div>
+		</header>
+    <br><br>
+
+    <!--Contenido Principal-->
+    <main class="tablaPrincipal">
+
+      <!--Estudiantes-->
+      <div class="grado">
+
+        <!--Titulo-->
+        <div class="tituloSec">
+          <h4 id="Docentes" style="font-size: 20px;">Grados Acádemicos</h4>
+        </div>
+              
+        <!--Grados-->
+        <div class="tabla" >
+                <table>
+                  <tr class="inicioTabla">
+                    <td>
+                      Grado
+                    </td>
+                    <td>
+                      Ver Estudiantes
+                    </td>
+                  </tr>
+      
+                  <tr class="infoTabla" th:each="grado : ${grado}">
+                    <td style="text-align: center;">
+                      [[ ${grado.grado} ]]
+                    </td>
+                    <td class="detalles">
+                      <a th:href="@{/admin/verEstudiantes/{id}(id = ${grado.id})}" target="_blank" style="padding: 3px;"><img th:src="@{/img/niveles.png}" height="25px"></a>
+                    </td>
+                  </tr>
+                </table>
+        </div>
+              
+      </div>
+
+      
+    </main>
+    <br>
+  </div>
+
+  <!--Footer-->
+  <footer>
+
+    <div class="foo">
+      <p style="color: lightgray; font-size: 12px;">@2023 Colegio Juan Jose Rondon Derechos reservados</p>
+    </div>
+
+  </footer>
+</body>
+
+</html>

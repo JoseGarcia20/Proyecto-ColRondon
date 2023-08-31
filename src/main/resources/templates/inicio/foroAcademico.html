@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FORO ACADEMICO</title>
+
+	<script th:src="@{/js/navegacion.js}"></script>
+	<link rel="stylesheet" th:href="@{/css/estilos.css}">
+	<link rel="stylesheet" th:href="@{/css/estilosForo.css}">
+	<link rel="stylesheet" th:href="@{/css/estilosMenu2.css}">
+
+	<link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+	<link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+	<link th:href="@{https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap}" rel="stylesheet">
+
+	<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css}">
+	<link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.css}">
+
+</head>
+
+<body>
+
+	<div class="principal">
+		<!--Menu Principal-->
+		<div>
+			<button onclick="AbrirMenu()" id="menu">
+				<i id="icono" class="fa fa-bars fa-2x" /></i>
+			</button>
+
+			<!--Menu Lateral: Se activa cuando se de click en el botón-->
+			<div id="menuLateral" class="menuLateral">
+				<ul id="menuDosLateral" class="menu">
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/#}">Login</a>
+						<ul class="sub-menu">
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/loginEstudiantes}">Estudiantes</a>
+							</li>
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/loginDocentes}">Docentes</a>
+							</li>
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/login}">Coordinación</a>
+							</li>
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/loginAcudientes}">Acudientes</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/quienesSomos}">¿Quienes somos?</a>
+					</li>
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/contacto}">Contacto - servicios</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<!--Encabezado-->
+		<header class="encabezado">
+			<div>
+				<a th:href="@{/}"><img th:src="@{/img/escudo.jpg}" alt=""></a>
+			</div>
+
+			<div class="titulo">
+				<h1>INST. COLRONDON</h1>
+			</div>
+
+			<div class="top-menu">
+				<ul class="menu2">
+					<li class="has-submenu">
+						<a class="g" th:href="@{/#}">LOGIN</a>
+						<ul class="submenu">
+							<li class="submenu-item">
+								<a th:href="@{/loginEstudiantes}">Estudiantes</a>
+							</li>
+							<li class="submenu-item">
+								<a th:href="@{/loginDocentes}">Docentes</a>
+							</li>
+							<li class="submenu-item">
+								<a th:href="@{/login}">Coordinación</a>
+							</li>
+							<li class="submenu-item">
+								<a th:href="@{/loginAcudientes}">Acudientes</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="submenu-item">
+						<a th:href="@{/}">INICIO</a>
+					</li>
+					<li class="submenu-item">
+						<a th:href="@{/quienesSomos}">ACERCA DE</a>
+					</li>
+					<li class="submenu-item">
+						<a th:href="@{/contacto}">CONTACTO</a>
+					</li>
+					<li class="submenu-item">
+						<a th:href="@{/foroAcademico}">FORO ACADEMICO</a>
+					</li>
+				</ul>
+
+			</div>
+		
+
+		</header>
+
+		<!--Contenido Principal-->
+		<main class="tablaPrincipal">
+
+			<!--Estudiantes-->
+			<div class="grado">
+
+				<!--Titulo-->
+				<div class="tituloSec">
+					<h4 id="Docentes" style="font-size: 20px;">Foro Académico</h4>
+				</div>
+
+				<!--Estudiantes-->
+				<div class="tabla">
+					<table>
+						<tr>
+							<td>
+								Información
+							</td>
+						</tr>
+
+						<tr class="infoTabla" th:each="foroAcademico : ${foroAcademico}">
+							<td>
+								<strong>
+									<p style="font-size: 19px; color: #0D1B2A;">[[ ${foroAcademico.titulo} ]]</p>
+								</strong>
+								<p><strong>Descripción:</strong> [[ ${foroAcademico.descripcion} ]]</p>
+								<p><strong>Hora de Inicio:</strong>[[ ${foroAcademico.horaInicio} ]]</p>
+								<p><strong>Hora Fin:</strong>[[ ${foroAcademico.horaFin} ]]</p>
+								<strong>Nota: Despues de la hora mencionada, no se responderan inquietudes.</strong>
+								<br><br>
+
+								<div style="display: flex;">
+									<a th:href="@{/foroAcademico/ver/{id}(id = ${foroAcademico.id})}"
+										style="padding: 3px;"><img th:src="@{/img/detalles.png}" height="25px"></a>
+								</div>
+
+							</td>
+						</tr>
+					</table>
+				</div>
+
+			</div>
+
+
+		</main>
+		<br>
+	</div>
+
+	<!--Footer-->
+	<footer>
+		<div class="container">
+			<div class="footer-content">
+				<div class="company-info">
+					<h3>Colegio Juan Jose Rondón</h3>
+					<p style="color: lightgray; font-size: 13px;">En el Colegio Juan José Rondón, nos enorgullece
+						brindar una educación de calidad y fomentar el desarrollo integral de nuestros estudiantes.</p>
+				</div>
+
+				<div class="quick-links">
+					<h3>Enlaces de interés</h3>
+					<ul class="ul" style="color: lightgray; font-size: 13px;">
+						<li><a th:href="@{/#}">Inicio</a></li>
+						<li><a th:href="@{/quienesSomos}">Quienes Somos</a></li>
+						<li><a th:href="@{/contacto}">Contactanos - servicios</a></li>
+					</ul>
+				</div>
+
+				<div class="contact-info">
+					<h3>Información de contacto</h3>
+					<ul style="color: lightgray; font-size: 13px;">
+						<li><i class="fas"></i> Dirección: Cl 4 #19, Piedecuesta, Santander</li>
+						<li><i class="fas"></i> Teléfono: 607 6555277</li>
+						<li><i class="fas"></i> Correo electrónico: colrondon@gmail.com</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="foo">
+			<p style="color: lightgray; font-size: 12px;">@2023 Colegio Juan Jose Rondon Derechos reservados</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

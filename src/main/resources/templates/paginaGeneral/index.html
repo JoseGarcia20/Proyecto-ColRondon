@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio - COLRONDON</title>
+
+	<script th:src="@{/js/navegacion.js}"></script>
+	<link rel="stylesheet" th:href="@{/css/estilos.css}">
+	<link rel="stylesheet" th:href="@{/css/estilosMenu2.css}">
+
+	<link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+	<link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+	<link th:href="@{https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap}" rel="stylesheet">
+
+	<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css}">
+	<link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.css}">
+
+</head>
+
+<body>
+
+	<div class="principal">
+		<!--Menu Principal-->
+		<div>
+			<button onclick="AbrirMenu()" id="menu">
+				<i id="icono" class="fa fa-bars fa-2x" /></i>
+			</button>
+
+			<!--Menu Lateral: Se activa cuando se de click en el botón-->
+			<div id="menuLateral" class="menuLateral">
+				<ul id="menuDosLateral" class="menu">
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/#}">Login</a>
+						<ul class="sub-menu">
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/loginEstudiantes}">Estudiantes</a>
+							</li>
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/loginDocentes}">Docentes</a>
+							</li>
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/login}">Coordinación</a>
+							</li>
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/loginAcudientes}">Acudientes</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/quienesSomos}">¿Quienes somos?</a>
+					</li>
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/contacto}">Contacto - servicios</a>
+					</li>
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/foroAcademico}">Foro Acádemico</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<!--Encabezado-->
+		<header class="encabezado">
+			<div>
+				<a th:href="@{/}"><img th:src="@{/img/escudo.jpg}" alt=""></a>
+			</div>
+
+			<div class="titulo">
+				<h1>INST. COLRONDON</h1>
+			</div>
+
+
+
+
+			<div class="top-menu">
+				<ul class="menu2">
+					<li class="has-submenu">
+						<a class="g" th:href="@{/#}">LOGIN</a>
+						<ul class="submenu">
+							<li class="submenu-item">
+								<a th:href="@{/loginEstudiantes}">Estudiantes</a>
+							</li>
+							<li class="submenu-item">
+								<a th:href="@{/loginDocentes}">Docentes</a>
+							</li>
+							<li class="submenu-item">
+								<a th:href="@{/login}">Coordinación</a>
+							</li>
+							<li class="submenu-item">
+								<a th:href="@{/loginAcudientes}">Acudientes</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="submenu-item">
+						<a th:href="@{/}">INICIO</a>
+					</li>
+					<li class="submenu-item">
+						<a th:href="@{/quienesSomos}">ACERCA DE</a>
+					</li>
+					<li class="submenu-item">
+						<a th:href="@{/contacto}">CONTACTO</a>
+					</li>
+					<li class="submenu-item">
+						<a th:href="@{/foroAcademico}">FORO ACADEMICO</a>
+					</li>
+				</ul>
+
+			</div>
+			<br><br>
+		</header>
+
+		<!--Contenido Principal-->
+		<main class="contenidoPrincipal">
+
+			<!--Slider Principal-->
+			<div class="sliderPrincipal">
+				<div class="sliderPrincipalCont">
+					<img th:src="@{https://media.istockphoto.com/id/1193612058/es/foto/grupo-de-estudiantes-de-edad-primaria-que-van-a-clase.jpg?s=612x612&w=0&k=20&c=aqJOBqw-SnS3BYYVlH93wP-0oyExcbjOwHH2MtI5L50=}">
+					<img th:src="@{https://media.istockphoto.com/id/525409405/es/foto/vista-trasera-de-estudiantes-adolescentes-levantando-la-mano-en-el-aula.jpg?s=612x612&w=0&k=20&c=hep4uC8ltPjNBCLcILaAWkNizH0w1ZFJWeq6yZiCl50=}">
+					<img th:src="@{https://cdn.pixabay.com/photo/2016/05/24/17/02/i-am-a-student-1412778_1280.jpg}">
+					<img th:src="@{https://media.istockphoto.com/id/1401800408/es/vector/pegatinas-escolares-clipart-etiquetas.jpg?s=612x612&w=0&k=20&c=V68beVrmIG51mZrwJes8TCXq73OvJahWdGowy1-ili0=}" alt="Imagen 4">
+					<img th:src="@{https://www.sneakerlost.es/hubfs/Las-universidades-se-adaptan-a-las-necesidades-02.png}" alt="Imagen 5">
+				</div>
+			</div>
+			<br><br>
+
+			<!--Secciones Informativa-->
+			<section class="seccInformacion">
+				<div class="tituloSec">
+					<h1>Bienvenidos al Colegio Juan Jose Rondón</h1>
+					<h4>Piedecuesta, Santander</h4>
+				</div>
+				<br>
+				<div class="informacion">
+					<p>Somos una institución educativa comprometida con el desarrollo integral de nuestros estudiantes.
+						Con una trayectoria
+						de excelencia académica y valores sólidos, nos enorgullece brindar una educación de calidad que
+						prepara a nuestros alumnos
+						para enfrentar los retos del mundo actual. En el colegio Juan Jose Rondón, promovemos un
+						ambiente de aprendizaje enriquecedor, donde fomentamos la curiosidad, la creatividad
+						y el pensamiento crítico.</p>
+				</div>
+			</section>
+
+			<!--Capacidades-->
+			<section>
+				<div class="sliderCapacidades">
+					<div class="iconoCap">
+						<img th:src="@{/img/instalaciones.png}" alt="Icono 1">
+						<p>Instalaciones Amplias</p>
+					</div>
+
+					<div class="iconoCap">
+						<img th:src="@{/img/comercial.png}" alt="Icono 2">
+						<p>Bachillerato Comercial</p>
+					</div>
+
+					<div class="iconoCap">
+						<img th:src="@{/img/responsabilidad.png}" alt="Icono 3">
+						<p>Responsabilidad y Compromiso</p>
+					</div>
+
+					<div class="iconoCap">
+						<img th:src="@{/img/profesor.png}" alt="Icono 3">
+						<p>Personal Capacitado</p>
+					</div>
+				</div>
+			</section>
+			<br>
+
+			<!--¿Donde nos Ubicamos?-->
+			<section>
+				<div>
+					<h2 style="color: #0D1B2A;">¿Donde estamos Ubicados?</h2>
+					<h4>Sede Principal</h4>
+				</div>
+
+				<div class="mapa">
+					<iframe class="map"
+						th:src="@{https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7920.299388004339!2d-73.0538138185676!3d6.9916435381590185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6847a9fb1ddd2d%3A0x3017ebaf45908a3c!2sColegio%20Juan%20Jos%C3%A9%20Rond%C3%B3n!5e0!3m2!1ses!2sco!4v1688650725550!5m2!1ses!2sco}"
+						width="1000" height="400" allowfullscreen="" loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</section>
+			<br><br>
+
+			<!--Informacion de interes-->
+			<section>
+				<div class="tituloInteres">
+					<h2 style="color: #0D1B2A;">Información de Interés</h2>
+				</div>
+
+				<div class="sliderInformacion">
+					<div class="imgInformacion">
+						<a href=""><img th:src="@{https://cdn.pixabay.com/photo/2016/06/23/02/10/team-1474506_1280.jpg}" alt="Imagen 4"></a>
+						<p>Interclases 2023</p>
+						<p style="font-size: 11px; color: #41566d;">Actividad de recreacion con los estudiantes de
+							preescolar, primaria y secundaria de la institucion, donde se apreciaron bailes y
+							actividades artisticas y culturales de cada región. </p>
+					</div>
+
+					<div class="imgInformacion">
+						<a href=""><img
+								th:src="@{https://cdn.pixabay.com/photo/2016/01/19/16/27/sale-1149344_1280.jpg}"
+								alt="Icono 2"></a>
+						<p>Feria Empresarial</p>
+						<p style="font-size: 11px; color: #41566d;">Jornada comercialización de productos elaborados y
+							estructurados por cada grupo de estudiantes, donde se pusieron en practica el proposito
+							comercial de la institución. </p>
+					</div>
+
+					<div class="imgInformacion">
+						<a href=""><img th:src="@{https://cdn.pixabay.com/photo/2016/09/13/09/25/kite-1666816_1280.jpg}" alt="Imagen 4"></a>
+						<p>Salida de Campo</p>
+						<p style="font-size: 11px; color: #41566d;">Actividad de recreacion con los estudiantes de
+							primaria y secundaria de la institucion, donde pudimos realizar actividades artisticas y de
+							integración social. </p>
+					</div>
+				</div>
+			</section>
+		</main>
+		<br>
+	</div>
+
+	<!--Footer-->
+	<footer>
+		<div class="container">
+			<div class="footer-content">
+				<div class="company-info">
+					<h3>Colegio Juan Jose Rondón</h3>
+					<p style="color: lightgray; font-size: 13px;">En el Colegio Juan José Rondón, nos enorgullece
+						brindar una educación de calidad y fomentar el desarrollo integral de nuestros estudiantes.</p>
+				</div>
+
+				<div class="quick-links">
+					<h3>Enlaces de interés</h3>
+					<ul class="ul" style="color: lightgray; font-size: 13px;">
+						<li><a th:href="@{/#}">Inicio</a></li>
+						<li><a th:href="@{/quienesSomos}">Quienes Somos</a></li>
+						<li><a th:href="@{/contacto}">Contactanos - servicios</a></li>
+					</ul>
+				</div>
+
+				<div class="contact-info">
+					<h3>Información de contacto</h3>
+					<ul style="color: lightgray; font-size: 13px;">
+						<li><i class="fas"></i> Dirección: Cl 4 #19, Piedecuesta, Santander</li>
+						<li><i class="fas"></i> Teléfono: 607 6555277</li>
+						<li><i class="fas"></i> Correo electrónico: colrondon@gmail.com</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="foo">
+			<p style="color: lightgray; font-size: 12px;">@2023 Colegio Juan Jose Rondon Derechos reservados</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

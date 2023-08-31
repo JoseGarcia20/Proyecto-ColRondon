@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Foro Acádemico</title>
+
+	<script th:src="@{/js/navegacion.js}"></script>
+	<link rel="stylesheet" th:href="@{/css/estilos.css}">
+	<link rel="stylesheet" th:href="@{/css/estilosFormulario.css}">
+
+	<link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+	<link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+	<link th:href="@{https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap}" rel="stylesheet">
+
+	<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css}">
+	<link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.css}">
+
+</head>
+
+<body>
+
+  <div class="principal">
+    <!--Menu Principal-->
+    <div>
+      <button onclick="AbrirMenu()" id="menu">
+        <i id="icono" class="fa fa-bars fa-2x"/></i>
+      </button>
+
+      <!--Menu Lateral: Se activa cuando se de click en el botón-->
+      <div id="menuLateral" class="menuLateral">
+        <ul id="menuDosLateral" class="menu">
+
+          <li class="menuItem menuItemPeque">
+            <a th:href="@{/#}">Login</a>
+            <ul class="sub-menu">
+              <li class="menuItem menuItemPeque">
+                <a th:href="@{/loginEstudiantes}">Estudiantes</a>
+              </li>
+              <li class="menuItem menuItemPeque">
+                <a th:href="@{/loginDocentes}">Docentes</a>
+              </li>
+              <li class="menuItem menuItemPeque">
+                <a th:href="@{/login}">Coordinación</a>
+              </li>
+              <li class="menuItem menuItemPeque">
+                <a th:href="@{/loginAcudientes}">Acudientes</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="menuItem menuItemPeque">
+            <a th:href="@{/quienesSomos}">¿Quienes somos?</a>
+          </li>
+
+          <li class="menuItem menuItemPeque">
+            <a th:href="@{/contacto}">Contacto - servicios</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+    <!--Encabezado-->
+    <header class="encabezado">
+      <div>
+        <a th:href="@{/}"><img th:src="@{/img/escudo.jpg}" alt=""></a>
+      </div>
+
+			<div class="titulo">
+				<h1>INST. COLRONDON</h1>
+			</div>
+    </header>
+		<br><br>
+
+		<!--Contenido Principal-->
+    <!--Contenido Principal-->
+    <main class="">
+
+      <div class="tituloSec">
+        <h3 style="color: #0D1B2A;">Foro Acádemico</h3>
+      </div>
+
+      <div class="container">
+
+        <form th:action="@{/foroAcademico/guardarComentario}" th:object="${comentariosForo}" method="post">
+			
+			<input type="hidden" th:field="*{id}">
+
+			<strong style="color: #0D1B2A;">Nota: Escribe correctamente tus datos personales, para comunicarnos contigo ante cualquier inconformidad.</strong>
+
+			<br><br>
+          <div class="grupoFormulario">
+            <label id="name-label" for="nombreCompleto">Nombre Completo</label>
+            <input
+              type="text"
+              name="nombreCompleto"
+              id="nombreCompleto"
+              class="controlForm"
+              placeholder="Nombre Completo"
+              required
+              th:field="*{nombreCompleto}"
+            />
+          </div>
+          
+          <div class="grupoFormulario">
+            <label id="name-label" for="telefono">Telefono:</label>
+            <input
+              type="text"
+              name="telefono"
+              id="telefono"
+              class="controlForm"
+              placeholder="Telefono"
+              required
+              th:field="*{telefono}"
+            />
+          </div>
+          
+          <div class="grupoFormulario">
+          	<label for="rol">Rol</label>
+            <select id="visitor" class="controlForm" name="rol">
+            	<option value="Estudiante">Estudiante</option>
+            	<option value="Docente">Docente</option>
+            	<option value="Acudiente">Acudiente</option>
+            </select>
+          </div>
+          
+          <div class="grupoFormulario">
+            <label id="name-label" for="comentarios">Comentario</label>
+            <textarea
+              type="text"
+              name="comentarios"
+              id="comentarios"
+              class="input-textarea"
+              placeholder="Comentario"
+              required
+              th:field="*{comentarios}"
+              rows="5" 
+              cols="100"
+            />
+          </div>
+          
+          <div class="grupoFormulario">
+          	<label for="foro">Foro </label>
+            <select th:field="*{foroAcademico}" id="visitor" class="controlForm">
+            	<option th:each="foroAcademico : ${foroAcademico}" th:value="${foroAcademico.id}">[[ ${foroAcademico.titulo} ]]</option>
+            </select>
+          </div>
+          
+
+
+          <div class="form-group">
+            <button type="submit" id="submit" class="submit-button">
+                Guardar
+            </button>
+
+          </div>
+        </form>
+      </div>
+    </main>
+		<br>
+	</div>
+
+	<!--Footer-->
+	<footer>
+		<div class="containerF">
+			<div class="footer-content">
+				<div class="company-info">
+					<h3>Colegio Juan Jose Rondón</h3>
+					<p style="color: lightgray; font-size: 13px;">En el Colegio Juan José Rondón, nos enorgullece
+						brindar una educación de calidad y fomentar el desarrollo integral de nuestros estudiantes.</p>
+				</div>
+
+				<div class="quick-links">
+					<h3>Enlaces de interés</h3>
+					<ul class="ul" style="color: lightgray; font-size: 13px;">
+						<li><a th:href="@{/#}">Inicio</a></li>
+						<li><a th:href="@{/quienesSomos}">Quienes Somos</a></li>
+						<li><a th:href="@{/contacto}">Contactanos - servicios</a></li>
+					</ul>
+				</div>
+
+				<div class="contact-info">
+					<h3>Información de contacto</h3>
+					<ul style="color: lightgray; font-size: 13px;">
+						<li><i class="fas"></i> Dirección: Cl 4 #19, Piedecuesta, Santander</li>
+						<li><i class="fas"></i> Teléfono: 607 6555277</li>
+						<li><i class="fas"></i> Correo electrónico: colrondon@gmail.com</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="foo">
+			<p style="color: lightgray; font-size: 12px;">@2023 Colegio Juan Jose Rondon Derechos reservados</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

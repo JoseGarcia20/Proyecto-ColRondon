@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio - COLRONDON</title>
+
+	<script th:src="@{/js/navegacion.js}"></script>
+	<link rel="stylesheet" th:href="@{/css/estilos.css}">
+	<link rel="stylesheet" th:href="@{/css/estilosMenu2.css}">
+
+	<link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+	<link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+	<link th:href="@{https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap}" rel="stylesheet">
+
+	<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css}">
+	<link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.css}">
+
+</head>
+
+<body>
+
+	<div class="principal">
+		<!--Menu Principal-->
+		<div>
+			<button onclick="AbrirMenu()" id="menu">
+				<i id="icono" class="fa fa-bars fa-2x" /></i>
+			</button>
+
+			<!--Menu Lateral: Se activa cuando se de click en el botón-->
+			<div id="menuLateral" class="menuLateral">
+				<ul id="menuDosLateral" class="menu">
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/#}">Login</a>
+						<ul class="sub-menu">
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/loginEstudiantes}">Estudiantes</a>
+							</li>
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/loginDocentes}">Docentes</a>
+							</li>
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/login}">Coordinación</a>
+							</li>
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/loginAcudientes}">Acudientes</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/quienesSomos}">¿Quienes somos?</a>
+					</li>
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/contacto}">Contacto - servicios</a>
+					</li>
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/foroAcademico}">Foro Acádemico</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<!--Encabezado-->
+		<header class="encabezado">
+			<div>
+				<a th:href="@{/}"><img th:src="@{/img/escudo.jpg}" alt=""></a>
+			</div>
+
+			<div class="titulo">
+				<h1>INST. COLRONDON</h1>
+			</div>
+
+
+
+			<div class="top-menu">
+				<ul class="menu2">
+					<li class="has-submenu">
+						<a class="g" th:href="@{/#}">LOGIN</a>
+						<ul class="submenu">
+							<li class="submenu-item">
+								<a th:href="@{/loginEstudiantes}">Estudiantes</a>
+							</li>
+							<li class="submenu-item">
+								<a th:href="@{/loginDocentes}">Docentes</a>
+							</li>
+							<li class="submenu-item">
+								<a th:href="@{/login}">Coordinación</a>
+							</li>
+							<li class="submenu-item">
+								<a th:href="@{/loginAcudientes}">Acudientes</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="submenu-item">
+						<a th:href="@{/}">INICIO</a>
+					</li>
+					<li class="submenu-item">
+						<a th:href="@{/quienesSomos}">ACERCA DE</a>
+					</li>
+					<li class="submenu-item">
+						<a th:href="@{/contacto}">CONTACTO</a>
+					</li>
+					<li class="submenu-item">
+						<a th:href="@{/foroAcademico}">FORO ACADEMICO</a>
+					</li>
+				</ul>
+
+			</div>
+			<div class="prueba">
+				<style>
+					.prueba {
+						border-bottom: 1px solid #0D1B2A;
+						/* Añade una línea horizontal */
+					}
+				</style>
+			</div>
+			<br><br>
+
+		</header>
+
+		<!--Contenido Principal-->
+		<main class="quienesSomos">
+
+			<!--Quienes Somos-->
+			<section class="contInfo">
+				<h1 class="tituloSec">¿Quienes Somos?</h1>
+
+				<div class="informacion">
+					<p>Con una trayectoria de 37 años de servicio, somos una institución educativa privada ubicada en el
+						Municipio de
+						Piedecuesta, con sedes en los barrios Palermo II, San Cristóbal y Villanueva.</p>
+					<p>Nuestra institución se caracteriza por ofrecer desde el nivel de pre escolar hasta el ciclo de
+						educación media,
+						la continuidad del servicio educativo, favoreciendo los procesos de formación desde los primeros
+						grados.</p>
+					<p>Nuestro PEI se enfoca hacia "EL DESARROLLO Y FORMACIÓN INTEGRAL DE LA PERSONA"</p>
+				</div>
+
+				<div class="imgQuienes">
+					<img src="https://cdn.pixabay.com/photo/2016/01/19/01/42/library-1147815_1280.jpg"
+						alt="">
+				</div>
+			</section>
+
+			<!--Vision y Mision-->
+			<div class="seccVisionMision">
+				<div class="vision">
+					<h2 class="tituloSeccion">Visión</h2>
+					<p class="info">El COLEGIO JUAN JOSÉ RONDÓN se proyecta a la comunidad como institución educativa de
+						calidad a bajos costos
+						garantizando la continuidad del servicio en todos los niveles que ofrece. Fundamentando en este
+						criterio genera procesos educativos
+						que posibilitan el desarrollo integral de la personalidad y establece metas de mejoramiento con
+						miras a fortalecer la cobertura y
+						demanda del servicio en todos los niveles; para ello articulará esfuerzos a través de convenios
+						a alianzas con empresas y/o
+						instituciones, con el fin de proveer los recursos y la infraestructura necesaria para consolidar
+						la calidad de los programas
+						académicos que ofrece.</p>
+					<img src="https://static.wixstatic.com/media/fcf5e6_36fd4fead8604849bea01e4112169339~mv2.jpg/v1/fill/w_674,h_806,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/fcf5e6_36fd4fead8604849bea01e4112169339~mv2.jpg"
+						alt="Imagen 2" class="image">
+				</div>
+
+				<div class="mision">
+					<h2 class="tituloSeccion">Misión</h2>
+					<p class="info">El colegio Juan José Rondón como institución de carácter privado está comprometida
+						en el mejoramiento continuo de los
+						servicios educativos que ofrece en los niveles de Pre escolar, Básica y Media. A través, de una
+						formación integral brinda a sus
+						estudiantes los medios y las herramientas para adquirir y generar conocimientos acordes a las
+						necesidades de una sociedad
+						globalizada y en continuo cambio, fortaleciendo sus valores básicos de convivencia.</p>
+					<img src="https://media.istockphoto.com/id/1193612058/es/foto/grupo-de-estudiantes-de-edad-primaria-que-van-a-clase.jpg?s=612x612&w=0&k=20&c=aqJOBqw-SnS3BYYVlH93wP-0oyExcbjOwHH2MtI5L50="
+						alt="Imagen 2" class="image">
+				</div>
+			</div>
+
+			<!--Reseña Historica-->
+			<section class="contInfo">
+				<h1 class="tituloSec">Reseña Historica</h1>
+
+				<div class="informacion">
+					<p>Nuestra institución fue fundada desde el año 1968 en la ciudad de Bucaramanga; desde sus inicios
+						ha generado procesos de
+						cambio y transformación con miras a fortalecer y ampliar la calidad de sus servicios,
+						favoreciendo la continuidad del proceso
+						educativo desde los primeros grados.</p>
+					<p>En el año 1985 amplia la cobertura del servicio en el municipio de Piedecuesta, donde actualmente
+						funciona desarrollando sus
+						programas académicos desde el nivel pre escolar hasta el ciclo de educación media.</p>
+					<p>Con el propósito de ofrecer una mayor cobertura de servicios y continuar trabajando por mantener
+						un alto nivel académico desde
+						el nivel de pre escolar, en el año 2008 abre una nueva sede en en la calle 1#4B-27 del barrio
+						Palermo II.</p>
+					<p>Desde sus perspectivas el PEI apunta hacia "El desarrollo y formación integral de la persona".
+					</p>
+				</div>
+			</section>
+		</main>
+		<br>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="footer-content">
+				<div class="company-info">
+					<h3>Colegio Juan Jose Rondón</h3>
+					<p style="color: lightgray; font-size: 13px;">En el Colegio Juan José Rondón, nos enorgullece
+						brindar una educación de calidad y fomentar el desarrollo integral de nuestros estudiantes.</p>
+				</div>
+
+				<div class="quick-links">
+					<h3>Enlaces de interés</h3>
+					<ul class="ul" style="color: lightgray; font-size: 13px;">
+						<li><a th:href="@{/#}">Inicio</a></li>
+						<li><a th:href="@{/quienesSomos}">Quienes Somos</a></li>
+						<li><a th:href="@{/contacto}">Contactanos - servicios</a></li>
+					</ul>
+				</div>
+
+				<div class="contact-info">
+					<h3>Información de contacto</h3>
+					<ul style="color: lightgray; font-size: 13px;">
+						<li><i class="fas"></i> Dirección: Cl 4 #19, Piedecuesta, Santander</li>
+						<li><i class="fas"></i> Teléfono: 607 6555277</li>
+						<li><i class="fas"></i> Correo electrónico: colrondon@gmail.com</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="foo">
+			<p style="color: lightgray; font-size: 12px;">@2023 Colegio Juan Jose Rondon Derechos reservados</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

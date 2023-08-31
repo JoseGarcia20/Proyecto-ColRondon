@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Acudiente</title>
+
+	<script th:src="@{/js/navegacion.js}"></script>
+	<link rel="stylesheet" th:href="@{/css/estilos.css}">
+	<link rel="stylesheet" th:href="@{/css/estilosFormulario.css}">
+
+	<link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+	<link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+	<link th:href="@{https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap}" rel="stylesheet">
+
+	<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css}">
+	<link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.css}">
+
+</head>
+
+<body>
+
+	<div class="principal">
+		<!--Menu Principal-->
+		<div>
+			<button onclick="AbrirMenu()" id="menu">
+				<i id="icono" class="fa fa-bars fa-2x" /></i>
+			</button>
+
+			<!--Menu Lateral: Se activa cuando se de click en el botón-->
+			<div id="menuLateral" class="menuLateral">
+				<ul id="menuDosLateral" class="menu">
+
+				</ul>
+			</div>
+		</div>
+
+		<!--Encabezado-->
+		<header class="encabezado">
+			<div>
+				<a th:href="@{/}"><img
+						th:src="@{data:image/jpeg;base64,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}"
+						alt=""></a>
+			</div>
+
+			<div class="titulo">
+				<h1>INST. COLRONDON</h1>
+			</div>
+		</header>
+		<br><br>
+
+		<!--Contenido Principal-->
+    <!--Contenido Principal-->
+    <main class="">
+
+      <div class="tituloSec">
+        <h3 style="color: #0D1B2A;">Ver Acudientes</h3>
+      </div>
+
+      <div class="container">
+
+        <form th:action="@{/admin/adminDocente/guardar}" th:object="${acudiente}" method="post">
+			
+			<input type="hidden" th:field="*{id}">
+			
+          <div class="grupoFormulario">
+            <label for="tipoDocumento">Tipo Documento</label>
+            <input
+              type="text"
+              name="tipoDocumento"
+              id="tipoDocumento"
+              class="controlForm"
+              placeholder="Tipo Documento"
+              required
+              th:field="*{tipoDocumento}"
+              readonly
+            />
+          </div>
+
+          <div class="grupoFormulario">
+            <label id="name-label" for="name">Documento</label>
+            <input
+              type="text"
+              name="Documento"
+              id="Documento"
+              class="controlForm"
+              placeholder="Documento"
+              required
+              th:field="*{documento}"
+              readonly
+            />
+          </div>
+
+          <div class="grupoFormulario">
+            <label id="label" for="name">Nombre Completo</label>
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              class="controlForm"
+              placeholder="Nombre Completo"
+              required
+              th:field="*{nombre}"
+              readonly
+            />
+          </div>
+
+          <div class="grupoFormulario">
+            <label id="label" for="apellido">Apellido Completo</label>
+            <input
+              type="email"
+              name="apellido"
+              id="apellido"
+              class="controlForm"
+              placeholder="Apellido Completo"
+              required
+              readonly
+              th:field="*{apellido}"
+            />
+          </div>
+
+          <div class="grupoFormulario">
+            <label id="email-label" for="email">Fecha Nacimiento</label>
+            <input
+              type="date"
+              name="fechaNacimiento"
+              id="fechaNacimiento"
+              class="controlForm"
+              placeholder="Fecha Nacimiento"
+              required
+              th:field="*{fechaNacimiento}"
+              readonly
+            />
+          </div>
+
+          <div class="grupoFormulario">
+            <label id="label" for="direccion">Direccion</label>
+            <input
+              type="text"
+              name="direccion"
+              id="direccion"
+              class="controlForm"
+              placeholder="Direccion"
+              required
+              th:field="*{direccion}"
+              readonly
+            />
+          </div>
+
+          <div class="grupoFormulario">
+            <label id="label" for="telefono">Telefono</label>
+            <input
+              type="text"
+              name="telefono"
+              id="telefono"
+              class="controlForm"
+              placeholder="Telefono"
+              required
+              th:field="*{telefono}"
+              readonly
+            />
+          </div>
+
+          <div class="grupoFormulario">
+            <label id="label" for="telefono">Telefono 2</label>
+            <input
+              type="text"
+              name="telefono"
+              id="telefono"
+              class="controlForm"
+              placeholder="Telefono"
+              required
+              th:field="*{telefono2}"
+              readonly
+            />
+          </div>
+
+          <div class="grupoFormulario">
+            <label id="label" for="parentezco">Parentezco</label>
+            <input
+              type="text"
+              name="parentezco"
+              id="parentezco"
+              class="controlForm"
+              placeholder="Parentezco"
+              required
+              th:field="*{parentezco}"
+              readonly
+            />
+          </div>
+
+          <div class="grupoFormulario">
+            <label id="email-label" for="email">Correo</label>
+            <input
+              type="email"
+              name="correo"
+              id="correo"
+              class="controlForm"
+              placeholder="Correo Electrónico"
+              required
+              th:field="*{correoElectronico}"
+              readonly
+            />
+          </div>
+
+          <div class="grupoFormulario">
+            <label id="email-label" for="clave">Clave</label>
+            <input
+              type="text"
+              name="clave"
+              id="clave"
+              class="controlForm"
+              placeholder="Clave"
+              required
+              th:field="*{clave}"
+              readonly
+            />
+          </div>
+
+        </form>
+      </div>
+    </main>
+		<br>
+	</div>
+
+	<!--Footer-->
+	<footer>
+
+		<div class="foo">
+			<p style="color: lightgray; font-size: 12px;">@2023 Colegio Juan Jose Rondon Derechos reservados</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

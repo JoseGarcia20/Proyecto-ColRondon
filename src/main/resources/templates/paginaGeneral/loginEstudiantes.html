@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+  <link rel="stylesheet" th:href="@{/css/estilosLogin.css}">
+</head>
+
+<body>
+  <main>
+    <section>
+      <div class="container">
+        <div class="login-form">
+          <h1>Ingresar</h1>
+          <form th:action="@{/loginEstudiantes}" method="post">
+            <input type="text" name="correoElectronico" placeholder="Correo Electronico">
+            <input type="password" name="clave" placeholder="password">
+            <input type="submit" name="" value="Login">
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

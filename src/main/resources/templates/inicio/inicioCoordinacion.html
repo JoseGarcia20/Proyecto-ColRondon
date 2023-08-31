@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Coordinacion</title>
+
+	<script th:src="@{/js/navegacion.js}"></script>
+	<link rel="stylesheet" th:href="@{/css/estilos.css}">
+
+	<link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+	<link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+	<link th:href="@{https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap}" rel="stylesheet">
+
+	<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css}">
+	<link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.css}">
+
+</head>
+
+<body>
+
+	<div class="principal">
+		
+		<!--Menu Principal-->
+		<div>
+			<button onclick="AbrirMenu()" id="menu">
+				<i id="icono" class="fa fa-bars fa-2x" /></i>
+			</button>
+
+			<!--Menu Lateral: Se activa cuando se de click en el botón-->
+			<div id="menuLateral" class="menuLateral">
+				<ul id="menuDosLateral" class="menu">
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/}">Cerrar Sesión</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!--Encabezado-->
+		<header class="encabezado">
+			<div>
+				<a><img th:src="@{/img/escudo.jpg}" alt=""></a>
+			</div>
+
+			<div class="titulo">
+				<h1>INST. COLRONDON</h1>
+			</div>
+		</header>
+		<br><br>
+
+		<div class="cards-list">
+
+			<!--Usuarios-->
+			<div class="cards">
+				<div>
+					<h3 style="color: #0D1B2A;">Administrar Usuarios</h3>
+				</div>
+
+				<div class="cards-list">
+
+					<!--Docentes-->
+					<div class="card 1">
+						<div class="card_image">
+							<img th:src="@{/img/profesor2.png}" height="3px" />
+						</div>
+
+						<div class="card_title">
+							<a th:href="@{/admin/adminDocente/}" target="_blank">Docentes</a>
+						</div>
+					</div>
+
+					<!--Grados-->
+					<div class="card 1">
+						<div class="card_image">
+							<img th:src="@{/img/niveles.png}" height="3px" />
+						</div>
+
+						<div class="card_title">
+							<a th:href="@{/admin/adminGrados/}" target="_blank">Grados</a>
+						</div>
+					</div>
+
+					<!--Acudientes-->
+					<div class="card 2">
+						<div class="card_image">
+							<img th:src="@{/img/padres.png}" />
+						</div>
+						<div class="card_title">
+							<a th:href="@{/admin/adminAcudiente/}" target="_blank">Acudientes</a>
+						</div>
+					</div>
+
+					<!--Estudiantes-->
+					<div class="card 3">
+						<div class="card_image">
+							<img th:src="@{/img/leyendo.png}" />
+						</div>
+						<div class="card_title">
+							<a th:href="@{/admin/adminEstudiante/}" target="_blank">Estudiantes</a>
+						</div>
+					</div>
+				</div>
+				
+					<!--Foro Academico-->
+					<div class="card 3">
+						<div class="card_image">
+							<img th:src="@{/img/discusion.png}" />
+						</div>
+						<div class="card_title">
+							<a th:href="@{/admin/adminForo/}" target="_blank">Foro Acádemico</a>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+
+	</div>
+	<br><br>
+
+	<!--Footer-->
+	<footer>
+
+		<div class="foo">
+			<p style="color: lightgray; font-size: 12px;">@2023 Colegio Juan Jose Rondon Derechos reservados</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>

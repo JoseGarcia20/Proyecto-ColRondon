@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio - COLRONDON</title>
+
+	<script th:src="@{/js/navegacion.js}"></script>
+	<link rel="stylesheet" th:href="@{/css/estilos.css}">
+	<link rel="stylesheet" th:href="@{/css/estilosMenu2.css}">
+
+	<link rel="preconnect" th:href="@{https://fonts.googleapis.com}">
+	<link rel="preconnect" th:href="@{https://fonts.gstatic.com}" crossorigin>
+	<link th:href="@{https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap}" rel="stylesheet">
+
+	<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css}">
+	<link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.css}">
+
+</head>
+
+<body>
+
+	<div class="principal">
+		<!--Menu Principal-->
+		<div>
+			<button onclick="AbrirMenu()" id="menu">
+				<i id="icono" class="fa fa-bars fa-2x" /></i>
+			</button>
+
+			<!--Menu Lateral: Se activa cuando se de click en el botón-->
+			<div id="menuLateral" class="menuLateral">
+				<ul id="menuDosLateral" class="menu">
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/#}">Login</a>
+						<ul class="sub-menu">
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/loginEstudiantes}">Estudiantes</a>
+							</li>
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/loginDocentes}">Docentes</a>
+							</li>
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/login}">Coordinación</a>
+							</li>
+							<li class="menuItem menuItemPeque">
+								<a th:href="@{/loginAcudientes}">Acudientes</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/quienesSomos}">¿Quienes somos?</a>
+					</li>
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/contacto}">Contacto - servicios</a>
+					</li>
+
+					<li class="menuItem menuItemPeque">
+						<a th:href="@{/foroAcademico}">Foro Acádemico</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<!--Encabezado-->
+		<header class="encabezado">
+			<div>
+				<a th:href="@{/}"><img th:src="@{/img/escudo.jpg}" alt=""></a>
+			</div>
+
+			<div class="titulo">
+				<h1>INST. COLRONDON</h1>
+			</div>
+
+			<div class="top-menu">
+				<ul class="menu2">
+					<li class="has-submenu">
+						<a class="g" th:href="@{/#}">LOGIN</a>
+						<ul class="submenu">
+							<li class="submenu-item">
+								<a th:href="@{/loginEstudiantes}">Estudiantes</a>
+							</li>
+							<li class="submenu-item">
+								<a th:href="@{/loginDocentes}">Docentes</a>
+							</li>
+							<li class="submenu-item">
+								<a th:href="@{/login}">Coordinación</a>
+							</li>
+							<li class="submenu-item">
+								<a th:href="@{/loginAcudientes}">Acudientes</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="submenu-item">
+						<a th:href="@{/}">INICIO</a>
+					</li>
+					<li class="submenu-item">
+						<a th:href="@{/quienesSomos}">ACERCA DE</a>
+					</li>
+					<li class="submenu-item">
+						<a th:href="@{/contacto}">CONTACTO</a>
+					</li>
+					<li class="submenu-item">
+						<a th:href="@{/foroAcademico}">FORO ACADEMICO</a>
+					</li>
+				</ul>
+
+			</div>
+
+			<br><br>
+		</header>
+
+
+		<!--Contenido Principal-->
+		<main class="contenidoInfo">
+
+			<!--Canalaes de informacion-->
+			<section class="seccInformacion">
+				<div class="tituloSec">
+					<h3>Canales de Comunicación</h3>
+					<h4>Piedecuesta, Santander</h4>
+				</div>
+				<br>
+				<div class="informacion">
+					<i style="font-size: 16px;">
+						<li>Teléfono 1: (607) 6555277</li>
+					</i>
+					<i style="font-size: 16px;">
+						<li>Teléfono 2: (607) 6567841 </li>
+					</i>
+					<i style="font-size: 16px;">
+						<li>Correo electronico: colrondon@gmail.com</li>
+					</i>
+					<i style="font-size: 16px;">
+						<p>Resolución 05310 del 11 de mayo de 2009</p>
+					</i>
+					<i style="font-size: 16px;">
+						<p>INTS. ColRondon</p>
+					</i>
+				</div>
+			</section>
+
+			<section class="seccInformacion">
+				<div class="tituloSec">
+					<h3>Nuestros servicios</h3>
+				</div>
+				<br>
+				<div class="informacion">
+					<i style="font-size: 16px;">
+						<li>Pre escolar: <p style="color: #40566d">En el PRE ESCOLAR se brinda un ambiente familiar
+								donde los niñ@s desde su ingreso
+								se sienten acogidos y seguros, favoreciendo su confianza, socialización e interacción en
+								cada grado.</p>
+						</li>
+						<p style="color: #40566d;">Con el apoyo y acompañamiento de PERSONAL IDONEO y de un trabajo en
+							equipo brindamos una educación de calidad a bajos costos,
+							centrada en desarrollar el potencial cognitivo y fortalecer la CONVIVENCIA SOCIAL a través
+							de la vivencia de valores.</p>
+					</i>
+					<br><br>
+					<i style="font-size: 16px;">
+						<li>Primaria: <p style="color: #40566d">En la básica primaria, nuestra institución ofrece a los
+								estudiantes un ambiente favorable
+								para su aprendizaje; mediante el uso de diferentes estrategias y metodologías, se
+								fortalece el desarrollo de competencias cognitivas, socio afectivas y corporales .</p>
+						</li>
+					</i>
+					<br><br>
+					<i style="font-size: 16px;">
+						<li>Secundaria: <p style="color: #40566d;">Con el fin de ofrecer a los jovenes una formación
+								integral de calidad que les permita continuar su proceso
+								formativo, el egresado de nuestra institución obtiene DOBLE TITULACIÓN.</p>
+						</li>
+						<li style="color: #40566d; margin-left: 60px; margin-bottom: 10px;">BACHILLER ACÁDEMICO CON
+							ENFÁSIS EN GESTIÓN EMPRESARIAL : Con un enfoque comercial los estudiantes fortalecen su
+							identidad empresarial a tráves de la ejecución de proyectos creativos
+							que favorecen el desarrollo de competencias emprendedoras.</li>
+						<li style="color: #40566d; margin-left: 60px;  margin-bottom: 30px;">TÉCNICO EN CONTABILIZACIÓN
+							DE OPERACIONES COMERCIALES Y FINANCIERAS: A través del convenido SENA en la media (10° y
+							11°) los estudiantes profundizan su aprendizaje y desarrollan un
+							total de 880 horas practicas permitiendo fortalecer sus competencias laborales y ofrecer
+							oportunidades de emprendimiento y empleo.</li>
+					</i>
+
+				</div>
+			</section>
+
+			<!--Ubicacion-->
+			<section style="margin: 10px;">
+				<div>
+					<h2 style="color: #0D1B2A;">¿Donde estamos Ubicados?</h2>
+					<h4>Sede Principal</h4>
+				</div>
+
+				<div class="mapa">
+					<iframe class="map"
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7920.299388004339!2d-73.0538138185676!3d6.9916435381590185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6847a9fb1ddd2d%3A0x3017ebaf45908a3c!2sColegio%20Juan%20Jos%C3%A9%20Rond%C3%B3n!5e0!3m2!1ses!2sco!4v1688650725550!5m2!1ses!2sco"
+						width="1000" height="400" allowfullscreen="" loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</section>
+
+
+
+		</main>
+		<br>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="footer-content">
+				<div class="company-info">
+					<h3>Colegio Juan Jose Rondón</h3>
+					<p style="color: lightgray; font-size: 13px;">En el Colegio Juan José Rondón, nos enorgullece
+						brindar una educación de calidad y fomentar el desarrollo integral de nuestros estudiantes.</p>
+				</div>
+
+				<div class="quick-links">
+					<h3>Enlaces de interés</h3>
+					<ul class="ul" style="color: lightgray; font-size: 13px;">
+						<li><a th:href="@{/#}">Inicio</a></li>
+						<li><a th:href="@{/quienesSomos}">Quienes Somos</a></li>
+						<li><a th:href="@{/contacto}">Contactanos - servicios</a></li>
+					</ul>
+				</div>
+
+				<div class="contact-info">
+					<h3>Información de contacto</h3>
+					<ul style="color: lightgray; font-size: 13px;">
+						<li><i class="fas"></i> Dirección: Cl 4 #19, Piedecuesta, Santander</li>
+						<li><i class="fas"></i> Teléfono: 607 6555277</li>
+						<li><i class="fas"></i> Correo electrónico: colrondon@gmail.com</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="foo">
+			<p style="color: lightgray; font-size: 12px;">@2023 Colegio Juan Jose Rondon Derechos reservados</p>
+		</div>
+
+	</footer>
+</body>
+
+</html>
