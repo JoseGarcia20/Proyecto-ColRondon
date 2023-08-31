@@ -16,7 +16,7 @@ public class seguridad {
 		return httpSecurity
 				.csrf(config -> config.disable())
 				.authorizeHttpRequests(auth -> {
-					auth.requestMatchers("/").permitAll();
+					auth.requestMatchers("/","/index","/quienesSomos","/contacto","/foroAcademico","/Css","/js","/img").permitAll();
 					auth.anyRequest().authenticated();
 				})
 		.sessionManagement(session -> {
